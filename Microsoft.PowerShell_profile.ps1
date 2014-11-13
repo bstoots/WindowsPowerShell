@@ -1,12 +1,16 @@
-# Add Scripts directory to the PS path
-#Join-Path (Split-Path -Parent $PROFILE) Scripts
-
 # TODO - Force PSBabushka to scan WindowsPowerShell directory regardless of start directory
+# For now just cd there
 cd (Split-Path -Parent $PROFILE)
 
 # PSBabushka - Config management
-# TODO - Check that PSBabushka actually imported
-Import-Module PSBabushka
+if (Get-Module PSBabushka) {
+  Import-Module PSBabushka
+}
+else {
+  # The version of PSBabushka in PsGet isn't current.  Get from git for now
+  git clone "git@github.com:PSBabushka/PSBabushka.git" "$PSScriptRoot\Modules\PSBabushka"
+  Import-Module PSBabushka
+}
 
 # Make sure PsGet is installed
 Invoke-PSBabushka 'PsGet-Installed'
