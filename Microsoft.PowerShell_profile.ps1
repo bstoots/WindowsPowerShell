@@ -3,7 +3,7 @@
 cd (Split-Path -Parent $PROFILE)
 
 # PSBabushka - Config management
-if (Get-Module PSBabushka) {
+if (Get-Module -ListAvailable | Where-Object {$_.name -eq "PSBabushka"}) {
   Import-Module PSBabushka
 }
 else {
