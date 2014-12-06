@@ -1,3 +1,6 @@
+
+$originalWd = pwd
+
 # TODO - Force PSBabushka to scan WindowsPowerShell directory regardless of start directory
 # For now just cd there
 cd (Split-Path -Parent $PROFILE)
@@ -39,3 +42,5 @@ if (Get-Module posh-git) {
   }
   Enable-GitColors
 }
+
+cd $originalWd
