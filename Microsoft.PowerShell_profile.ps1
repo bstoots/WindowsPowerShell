@@ -13,15 +13,15 @@ else {
 }
 
 # Make sure PsGet is installed
-Invoke-PSBabushka 'PsGet-Installed'
+Invoke-PSBabushka 'PsGet-Installed' *>$null
 
 # Make sure PSReadLine is installed
-Invoke-PSBabushka 'PSReadLine-Installed'
+Invoke-PSBabushka 'PSReadLine-Installed' *>$null
 # TODO - Move these into their own directories or something ...
-Invoke-PSBabushka 'PSReadline-Config-TabComplete'
+Invoke-PSBabushka 'PSReadline-Config-TabComplete' *>$null
 
 # Make sure PoshGit is installed
-Invoke-PSBabushka 'PoshGit-Installed'
+Invoke-PSBabushka 'PoshGit-Installed' *>$null
 
 # posh-git - Git goodies, prompt etc
 # TODO - Figure out a way to do this with PSBabushka
