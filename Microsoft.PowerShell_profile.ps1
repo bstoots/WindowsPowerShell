@@ -24,23 +24,23 @@ Invoke-PSBabushka 'PSReadLine-Installed' *>$null
 Invoke-PSBabushka 'PSReadline-Config-TabComplete' *>$null
 
 # Make sure PoshGit is installed
-Invoke-PSBabushka 'PoshGit-Installed' *>$null
+# Invoke-PSBabushka 'PoshGit-Installed' *>$null
 
 # posh-git - Git goodies, prompt etc
 # TODO - Figure out a way to do this with PSBabushka
-if (Get-Module posh-git) {
-  # Set up a simple prompt, adding the git prompt parts inside git repos
-  # D:\Users\bstoots\Documents\WindowsPowerShell\Modules\posh-git\profile.example.ps1
-  function global:prompt {
-    $realLASTEXITCODE = $LASTEXITCODE
-    # Reset color, which can be messed up by Enable-GitColors
-    $Host.UI.RawUI.ForegroundColor = $GitPromptSettings.DefaultForegroundColor
-    Write-Host($pwd.ProviderPath) -nonewline
-    Write-VcsStatus
-    $global:LASTEXITCODE = $realLASTEXITCODE
-    return "> "
-  }
-  Enable-GitColors
-}
+# if (Get-Module posh-git) {
+#   # Set up a simple prompt, adding the git prompt parts inside git repos
+#   # D:\Users\bstoots\Documents\WindowsPowerShell\Modules\posh-git\profile.example.ps1
+#   function global:prompt {
+#     $realLASTEXITCODE = $LASTEXITCODE
+#     # Reset color, which can be messed up by Enable-GitColors
+#     $Host.UI.RawUI.ForegroundColor = $GitPromptSettings.DefaultForegroundColor
+#     Write-Host($pwd.ProviderPath) -nonewline
+#     Write-VcsStatus
+#     $global:LASTEXITCODE = $realLASTEXITCODE
+#     return "> "
+#   }
+#   Enable-GitColors
+# }
 
 cd $originalWd
