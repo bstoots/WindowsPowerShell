@@ -27,7 +27,7 @@ Invoke-PSBabushka 'PSReadline-Config-TabComplete' *>$null
 Invoke-PSBabushka 'PoshNpm-Installed' *>$null
 
 # Make sure PoshGit is installed
-# Invoke-PSBabushka 'PoshGit-Installed' *>$null
+Invoke-PSBabushka 'PoshGit-Installed' *>$null
 
 # posh-git - Git goodies, prompt etc
 # TODO - Figure out a way to do this with PSBabushka
