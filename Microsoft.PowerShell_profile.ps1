@@ -1,9 +1,5 @@
-
-$originalWd = pwd
-
-# TODO - Force PSBabushka to scan WindowsPowerShell directory regardless of start directory
-# For now just cd there
-cd (Split-Path -Parent $PROFILE)
+# Push current location, jump to profile location
+Push-Location (Split-Path -Parent $PROFILE)
 
 # PSBabushka - Config management
 if (Get-Module -ListAvailable | Where-Object {$_.name -eq "PSBabushka"}) {
@@ -46,4 +42,5 @@ Invoke-PSBabushka 'PoshGit-Installed' *>$null
 #   Enable-GitColors
 # }
 
-cd $originalWd
+# Pop back to /*reality*/ start location
+Pop-Location
