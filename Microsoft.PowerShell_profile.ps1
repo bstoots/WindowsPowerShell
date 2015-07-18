@@ -25,6 +25,9 @@ Invoke-PSBabushka 'PSReadline-Config-TabComplete' *>$null
 # Make sure PoshGit is installed
 Invoke-PSBabushka 'PoshGit-Installed' *>$null
 
+# Load custom prompt definition
+. "$PSScriptRoot\prompt.ps1"
+
 # posh-git - Git goodies, prompt etc
 # TODO - Figure out a way to do this with PSBabushka
 # if (Get-Module posh-git) {
