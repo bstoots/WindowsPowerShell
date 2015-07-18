@@ -24,7 +24,7 @@ Invoke-PSBabushka 'PSReadLine-Installed' *>$null
 Invoke-PSBabushka 'PSReadline-Config-TabComplete' *>$null
 
 # Bring in for nice NPM tab completions
-Invoke-PSBabushka 'PoshNpm-Installed' *>$null
+#Invoke-PSBabushka 'PoshNpm-Installed' *>$null
 
 # Make sure PoshGit is installed
 Invoke-PSBabushka 'PoshGit-Installed' *>$null
