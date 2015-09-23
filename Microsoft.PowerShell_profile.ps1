@@ -25,6 +25,15 @@ Invoke-PSBabushka 'PSReadline-Config-TabComplete' *>$null
 # Make sure PoshGit is installed
 Invoke-PSBabushka 'PoshGit-Installed' *>$null
 
+# Add Scripts\ to path 
+if ((Test-Path -Path ".\Scripts") -eq $false) {
+  New-Item -ItemType Directory -Force -Path ".\Scripts" *>$null
+}
+# Don't add to Path if already in Path
+if ($env:Path -notlike "*$PSScriptRoot\Scripts*") {
+  $env:Path += ";$PSScriptRoot\Scripts"
+}
+
 # Load custom prompt definition
 . "$PSScriptRoot\prompt.ps1"
 
