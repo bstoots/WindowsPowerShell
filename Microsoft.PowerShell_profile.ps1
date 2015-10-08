@@ -37,11 +37,6 @@ if ($env:Path -notlike "*$PSScriptRoot\Scripts*") {
 # Load custom prompt definition
 . "$PSScriptRoot\prompt.ps1"
 
-# PowerShell needs the msys SSH auth socket
-if ((Test-Path env:\SSH_AUTH_SOCK_MSYS) -eq $true) {
-  $SSH_AUTH_SOCK=$env:SSH_AUTH_SOCK_MSYS
-}
-
 # posh-git - Git goodies, prompt etc
 # TODO - Figure out a way to do this with PSBabushka
 # if (Get-Module posh-git) {
