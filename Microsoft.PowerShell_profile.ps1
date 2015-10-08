@@ -38,7 +38,7 @@ if ($env:Path -notlike "*$PSScriptRoot\Scripts*") {
 . "$PSScriptRoot\prompt.ps1"
 
 # PowerShell needs the msys SSH auth socket
-if ((Test-Path variable:global:SSH_AUTH_SOCK_MSYS) -eq $true) {
+if ((Test-Path env:\SSH_AUTH_SOCK_MSYS) -eq $true) {
   $env:SSH_AUTH_SOCK=$env:SSH_AUTH_SOCK_MSYS
 }
 
