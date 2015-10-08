@@ -39,7 +39,7 @@ if ($env:Path -notlike "*$PSScriptRoot\Scripts*") {
 
 # PowerShell needs the msys SSH auth socket
 if ((Test-Path env:\SSH_AUTH_SOCK_MSYS) -eq $true) {
-  $env:SSH_AUTH_SOCK=$env:SSH_AUTH_SOCK_MSYS
+  $SSH_AUTH_SOCK=$env:SSH_AUTH_SOCK_MSYS
 }
 
 # posh-git - Git goodies, prompt etc
